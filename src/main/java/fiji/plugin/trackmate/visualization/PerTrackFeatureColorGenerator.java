@@ -201,8 +201,10 @@ public class PerTrackFeatureColorGenerator implements TrackColorGenerator, Model
 	@Override
 	public void setMinMax( final double min, final double max )
 	{
+		setAutoMinMaxMode( false );
 		this.min = min;
 		this.max = max;
+		refreshColorMap();
 	}
 
 	@Override
@@ -260,7 +262,7 @@ public class PerTrackFeatureColorGenerator implements TrackColorGenerator, Model
 		else
 		{
 			autoMinMax();
+			refreshColorMap();
 		}
-		refreshColorMap();
 	}
 }
